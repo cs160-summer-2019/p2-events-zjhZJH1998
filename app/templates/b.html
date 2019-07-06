@@ -21,7 +21,7 @@
 				<h3>Task 1b</h3>
 			</div>
 			<div class="col-6">
-				<button class="btn btn-light float-right">
+				<button class="btn btn-light float-right" id="stopbtn">
 					Stop
 				</button>
 			</div>
@@ -29,7 +29,8 @@
 
 		<div class="row">
 			<div class="col-12">
-				<div class="shape-container">
+				<div class="shape-container" id="1">
+         
 					<!-- Dynamically add your circles here! -->
 					<!-- Example circle: <div class="p2-circle bg-blue"></div> -->
 				</div>
@@ -40,8 +41,17 @@
 
 <script type="text/javascript">
 
-	// your solution here
-
+function Sam(){
+  $("#1").append('<div class="p2-circle bg-blue"></div>');
+}
+  
+ 
+$(document).ready(function(){
+   var sam=setInterval("Sam()","1000");
+  $("#stopbtn").on('click',()=>{
+    clearInterval(sam);
+  })
+   });
 </script>
 </body>
 </html>
