@@ -29,32 +29,33 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="shape-container">
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-purple"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
-					<div class="p2-circle bg-green"></div>
+					<div class="p2-circle bg-purple" id="p1"></div>
+					<div class="p2-circle bg-purple" id="p2"></div>
+					<div class="p2-circle bg-purple" id="p3"></div>
+					<div class="p2-circle bg-purple" id="p4"></div>
+					<div class="p2-circle bg-purple" id="p5"></div>
+					<div class="p2-circle bg-green" id="g1"></div>
+					<div class="p2-circle bg-green" id="g2"></div>
+					<div class="p2-circle bg-green" id="g3"></div>
+					<div class="p2-circle bg-green" id="g4"></div>
+					<div class="p2-circle bg-green" id="g5"></div>
 					<div class="p2-circle bg-yellow p2-border"></div>
 					<div class="p2-circle bg-yellow p2-border"></div>
 					<div class="p2-circle bg-yellow"></div>
 					<div class="p2-circle bg-yellow"></div>
 					<div class="p2-circle bg-yellow"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
-					<div class="p2-circle bg-orange p2-border"></div>
+					<div class="p2-circle bg-orange p2-border" id="ob1"></div>
+					<div class="p2-circle bg-orange p2-border" id="ob2"></div>
 					<div class="p2-circle bg-orange"></div>
 					<div class="p2-circle bg-orange"></div>
 					<div class="p2-circle bg-orange"></div>
-					<div class="p2-circle bg-blue"></div>
-					<div class="p2-circle bg-blue"></div>
-					<div class="p2-circle bg-blue p2-border"></div>
-					<div class="p2-circle bg-blue p2-border"></div>
-					<div class="p2-circle bg-blue"></div>
-					<div class="p2-circle" id="gradient-circle"></div>
+					<div class="p2-circle bg-blue" id="b1"></div>
+					<div class="p2-circle bg-blue" id="b2"></div>
+					<div class="p2-circle bg-blue p2-border" id="bb1"></div>
+					<div class="p2-circle bg-blue p2-border" id="bb2"></div>
+					<div class="p2-circle bg-blue" id="b3"></div>
+          <div class="p2-circle" id="gradient-circle"></div>
+          
 				</div>
 			</div>
 		</div>
@@ -63,7 +64,26 @@
 
 
 <script type="text/javascript">
-	// your solution here
+$(document).ready(function(){
+$("#p1,#p2,#p3,#p4,#p5").on('click',()=>{
+  $("#p1,#p2,#p3,#p4,#p5").hide();
+  
+});
+  $("#g1,#g2,#g3,#g4,#g5").on('click',()=>{
+  $("#g1,#g2,#g3,#g4,#g5,#b1,#b2,#b3,#bb1,#bb2").hide();
+  });
+$("#ob1,#ob2").on('click',(e)=>{
+  $("#ob1,#ob2").hide();
+  $(e.target).show();
+});
+  $("#gradient-circle").hover(function(){
+            $("#gradient-circle").show();
+        },function(){
+            $("#gradient-circle").hide();})
+  $("button").on('click',()=>{
+    $("#p1,#p2,#p3,#p4,#p5,#g1,#g2,#g3,#g4,#g5,#b1,#b2,#b3,#bb1,#bb2,#ob1,#ob2,#gradient-circle").show();
+  })
+});
 
 </script>
 </body>
